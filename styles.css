@@ -1,0 +1,247 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Configuración del body con fondo negro */
+body {
+    font-family: 'Rajdhani', sans-serif;
+    background-color: #0D0D0D !important;
+    color: #EAEAEA;
+    min-height: 100vh;
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* Fondo con grilla holográfica */
+.holographic-grid {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    opacity: 0.4;
+    background-color: #0b0b0b;
+    background-image:
+        linear-gradient(#085A8C 1px, transparent 1px),
+        linear-gradient(90deg, #085A8C 1px, transparent 1px),
+        linear-gradient(#14CCFF 1px, transparent 1px),
+        linear-gradient(90deg, #14CCFF 1px, transparent 1px);
+    background-size: 50px 50px, 50px 50px, 100px 100px, 100px 100px;
+    animation: gridMove 20s linear infinite;
+}
+
+@keyframes gridMove {
+    0% {
+        transform: translate(0, 0);
+    }
+    100% {
+        transform: translate(50px, 50px);
+    }
+}
+
+/* Contenedor principal */
+.main-container {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    position: relative;
+    z-index: 1;
+}
+
+/* Sección hero */
+.hero-section {
+    text-align: center;
+    max-width: 825px;
+    width: 100%;
+}
+
+/* Título principal */
+.main-title {
+    font-family: 'Orbitron', monospace;
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+}
+
+.name {
+    color: #14CCFF !important;
+    font-weight: 900;
+    text-shadow: 0 0 20px rgba(20, 204, 255, 0.5);
+}
+
+.separator {
+    color: #085A8C;
+    margin: 0 1rem;
+    font-weight: 400;
+}
+
+.roles {
+    color: #EAEAEA;
+    font-weight: 400;
+}
+
+/* Eslogan */
+.tagline {
+    font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+    color: #B0B0B0;
+    margin-bottom: 3rem;
+    font-style: italic;
+    font-weight: 300;
+}
+
+/* Contenedor del CTA */
+.cta-container {
+    margin-top: 2rem;
+}
+
+/* Botón de GitHub */
+.github-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.2rem 2.5rem;
+    background: #14CCFF !important;
+    color: #0D0D0D !important;
+    text-decoration: none;
+    border-radius: 8px;
+    font-family: 'Orbitron', monospace;
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(20, 204, 255, 0.3);
+    border: none;
+    cursor: pointer;
+}
+
+.github-button:hover {
+    transform: translateY(-2px);
+    box-shadow:
+        0 8px 25px rgba(20, 204, 255, 0.5),
+        0 0 30px rgba(20, 204, 255, 0.4);
+    background: #0FA3CC !important;
+}
+
+/* Icono de GitHub */
+.github-icon {
+    width: 24px;
+    height: 24px;
+    fill: currentColor;
+}
+
+/* Texto del botón */
+.button-text {
+    white-space: nowrap;
+}
+
+/* Subtexto del CTA */
+.cta-subtitle {
+    margin-top: 1rem;
+    font-size: 0.9rem;
+    color: #EAEAEA;
+    opacity: 0.8;
+    font-weight: 300;
+}
+
+/* Diseño responsivo */
+@media (max-width: 768px) {
+    .main-container {
+        padding: 1rem;
+    }
+
+    .main-title {
+        font-size: clamp(1.5rem, 6vw, 2.5rem);
+        margin-bottom: 1rem;
+    }
+
+    .separator {
+        margin: 0 0.5rem;
+    }
+
+    .tagline {
+        font-size: clamp(1rem, 3vw, 1.2rem);
+        margin-bottom: 2rem;
+    }
+
+    .github-button {
+        padding: 1rem 2rem;
+        font-size: 1rem;
+        gap: 0.8rem;
+    }
+
+    .button-text {
+        white-space: normal;
+        text-align: center;
+    }
+
+    .github-icon {
+        width: 20px;
+        height: 20px;
+    }
+
+    .holographic-grid {
+        background-size: 30px 30px, 30px 30px, 60px 60px, 60px 60px;
+    }
+}
+
+@media (max-width: 480px) {
+    .main-title {
+        font-size: clamp(1.2rem, 7vw, 2rem);
+    }
+
+    .github-button {
+        padding: 0.9rem 1.5rem;
+        font-size: 0.9rem;
+        flex-direction: column;
+        gap: 0.5rem;
+        text-align: center;
+    }
+
+    .button-text {
+        font-size: 0.85rem;
+        line-height: 1.2;
+    }
+
+    .cta-subtitle {
+        font-size: 0.8rem;
+        margin-top: 0.8rem;
+    }
+}
+
+/* Asegurar que el fondo sea siempre negro */
+html {
+    background-color: #0D0D0D !important;
+}
+
+/* Fallback para navegadores que no soporten CSS custom properties */
+body {
+    background: #0D0D0D;
+}
+
+.name {
+    color: #14CCFF;
+}
+
+.separator {
+    color: #085A8C;
+}
+
+.roles {
+    color: #EAEAEA;
+}
+
+.tagline {
+    color: #B0B0B0;
+}
+
+.cta-subtitle {
+    color: #EAEAEA;
+}
